@@ -2,11 +2,10 @@ const config: any = {
   cms_manual_init: true,
   backend: {
     name: "git-gateway",
-    repo: "yourname/your-github-repo-name",
     branch: "main",
   },
   media_folder: "content/images",
-  local_backend: true,
+  // local_backend: true,
   public_folder: "public",
   collections: [
     {
