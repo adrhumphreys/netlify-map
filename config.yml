@@ -1,0 +1,118 @@
+backend:
+  name: test-repo
+
+media_folder: assets/uploads
+
+collections:
+  - label: "Posts"
+    label_singular: "Post"
+    name: "posts"
+    folder: "_posts"
+    create: true
+    fields:
+      - label: Title
+        name: title
+        widget: string
+
+      - label: ID
+        name: id
+        widget: ncw-id
+        prefix: post
+        timestamp: true
+        hint: This widget generates a unique read-only id
+
+      - label: Coffee
+        name: coffee
+        widget: ncw-file-relation
+        collection: setting
+        file: cats
+        target_field: coffee
+        multiple: true
+        hint: This widget retrives options from a simple list in a file collection
+
+      - label: Categories
+        name: cats
+        widget: ncw-file-relation
+        collection: setting
+        file: cats
+        target_field: cats
+        id_field: id
+        display_summary: "{{name}} | {{id}}"
+        multiple: true
+        hint: This widget retrives options from a object list in a file collection
+
+      - label: Category (Single)
+        name: single
+        widget: ncw-file-relation
+        collection: setting
+        file: cats
+        target_field: cats
+        id_field: id
+        display_fields: ['name', 'desc']
+        hint: Same as above, but only with single choice
+
+      - label: Content
+        name: content
+        widget: ncw-tiny-mce
+        tiny_config:
+          apiKey: 2mop17cb19lb2zpat4q08uodq6evr03lp1gog81fqj4mo7t3
+
+  - label: Pages
+    name: pages
+    files:
+      - label: Home
+        name: home
+        file: _data/_home.json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+
+          - label: Featured Posts
+            name: featured
+            widget: ncw-reorder
+            collection: posts
+            id_field: id
+            display_template: '{{title}}'
+            hint: "this reorder widget display entries from `posts` collection."
+            max_height: 200px 
+            
+
+          - label: Featured Posts (Custom)
+            name: featuredCustom
+            widget: custom-reorder
+            collection: posts
+            id_field: id
+            display_template: '{{title}}'
+            hint: "this is a reorder widget with custom control"
+
+  - label: Setting
+    name: setting
+    files:
+      - label: Categories
+        name: cats
+        file: _data/_cats.json
+        fields:
+          - label: Coffee
+            name: coffee
+            widget: list
+            allow_add: true
+            hint: Use comma to separate between name
+
+          - label: Categories
+            name: cats
+            widget: list
+            allow_add: true
+            fields:
+              - label: Name
+                name: name
+                widget: string
+
+              - label: Description
+                name: desc
+                widget: text
+
+              - label: ID
+                name: id
+                widget: ncw-id
+                prefix: cats

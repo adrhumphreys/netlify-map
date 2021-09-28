@@ -1,0 +1,16 @@
+{
+  "date": "2021-09-23T08:12:58.258Z",
+  "title": "dsfsdf",
+  "body": "**fdsfdsfds**",
+  "cats": [
+    {
+      "name": "fsdfds",
+      "description": "sdfsdfs",
+      "map": "{\"type\":\"Point\",\"coordinates\":[-5.2734375,16.299051]}",
+      "categories": [
+        "fsdf",
+        "sdfsd"
+      ]
+    }
+  ]
+}

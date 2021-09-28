@@ -1,0 +1,30 @@
+{
+  "filter_sets": [
+    {
+      "name": "Categories",
+      "filters": [
+        {
+          "title": "Example",
+          "id": "f3qJOQ257RNCa3cEoHyru"
+        }
+      ]
+    },
+    {
+      "name": "Significance",
+      "filters": [
+        {
+          "id": "LxpWgYobqSzdLmdF6tqHO",
+          "title": "Primary Significance"
+        },
+        {
+          "id": "sgvL1doXxQCJRFI7ssZRr",
+          "title": "Significant"
+        },
+        {
+          "id": "E8TOT64TE9MKtOCGn090e",
+          "title": "Contextual or character"
+        }
+      ]
+    }
+  ]
+}
