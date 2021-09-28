@@ -1,13 +1,12 @@
 import MapGL, {
   Popup,
   NavigationControl,
-  FullscreenControl,
   ScaleControl,
-  GeolocateControl,
+  WebMercatorViewport,
 } from "react-map-gl";
 import MapListPopup from "./MapListPopup";
 import ListMapPins from "./ListMapPins";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LocationData } from "../lib/locations";
 import { Filter } from "../lib/filters";
 import { ActiveFilters } from "../pages/map";
@@ -65,6 +64,19 @@ const ListMap = ({
   const [popupInfo, setPopupInfo] = useState<LocationData | null>(null);
 
   const locationsToShow = getLocationsToShow(activeFilters, locations);
+  const bounds: any = locationsToShow.map((l) => [l.longitude, l.latitude]);
+
+  useEffect(() => {
+    if (bounds.length <= 0) return;
+
+    console.log(bounds);
+
+    setViewport(
+      new WebMercatorViewport({ width: 800, height: 600 }).fitBounds(bounds, {
+        padding: 50,
+      })
+    );
+  }, []);
 
   return (
     <>
