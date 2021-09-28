@@ -26,7 +26,10 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <script
+          src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+          async
+        ></script>
       </Head>
       <p>Where the map would go if I had one</p>
       <button onClick={() => setOpen(true)}>Open</button>
