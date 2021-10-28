@@ -1,0 +1,37 @@
+diff --git a/app/tests/Fixtures/Blocks/ProductExplorerBlockFixture.php b/app/tests/Fixtures/Blocks/ProductExplorerBlockFixture.php
+index 9ab63c87c238282b8cd1405b753aedb17d93448b..04e3899f5fa8b885c32a46d481b141b019110e9f 100644
+--- a/app/tests/Fixtures/Blocks/ProductExplorerBlockFixture.php
++++ b/app/tests/Fixtures/Blocks/ProductExplorerBlockFixture.php
+@@ -50,6 +50,7 @@ class ProductExplorerBlockFixture extends AbstractFixture implements DependentFi
+      */
+     public function load(): void
+     {
++        return;
+         $page = FeaturePage::create();
+         $page->Title = 'Product Explorer';
+         $page->URLSegment = 'product-explorer';
+diff --git a/patternLibrary/packages/logger/index.ts b/patternLibrary/packages/logger/index.ts
+index fc86ae640bab02a3d12bf0f35157e0183aa34dd2..78dda0f66fd51b71fe5d34995da041412caaf800 100644
+--- a/patternLibrary/packages/logger/index.ts
++++ b/patternLibrary/packages/logger/index.ts
+@@ -24,7 +24,7 @@ import { Logger } from "loglevel";
+  * This is using loglevel: https://github.com/pimterry/loglevel
+  */
+ export const createLogger = (name: string): Logger => {
+-  if (TNZ.Util.isDebugMode()) {
++  if (TNZ.Util.isDebugMode() || true) {
+     log.enableAll();
+ 
+     // This allows all the logs to be prefixed with the logger name
+diff --git a/app/tests/Fixtures/Blocks/TabsetBlockFixture.php b/app/tests/Fixtures/Blocks/TabsetBlockFixture.php
+index e445550889072cfb0584d84b8b350fa6fbc45a09..f500dc429034092737336aa80efd179e762a7435 100644
+--- a/app/tests/Fixtures/Blocks/TabsetBlockFixture.php
++++ b/app/tests/Fixtures/Blocks/TabsetBlockFixture.php
+@@ -42,6 +42,7 @@ class TabsetBlockFixture extends AbstractFixture implements DependentFixtureInte
+      */
+     public function load(): void
+     {
++        return;
+         $page = FeaturePage::create([
+             'Title' => 'Tabset',
+             'URLSegment' => 'tabset',
